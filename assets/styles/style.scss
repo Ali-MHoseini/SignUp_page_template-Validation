@@ -1,0 +1,114 @@
+$background_img: "../imgs/bcg.jpg";
+$base_color: #B7B3CD;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+@mixin disFlex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@mixin image($bcg) {
+    background-image: url($bcg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    width: 100%;
+    height: 95%;
+    @include image($background_img);
+    @include disFlex;
+    gap: 2.5rem;
+    opacity: 0.8;
+}
+
+.signUp_box {
+    background: transparent;
+    width: 30%;
+    padding: 2.5rem;
+    border: 1px solid $base_color;
+    @include disFlex;
+    gap: 2rem;
+    border-radius: 0.5rem;
+    .color {
+        background-color: rgba(144, 58, 224, 0.884);
+    }
+    form {
+        width: 100%;
+        @include disFlex;
+        gap: 1.5rem;
+        background: transparent;
+        >p {
+            color: $base_color;
+        }
+    }
+}
+
+.inp_box {
+    width: 100%;
+    @include disFlex;
+    flex-direction: row !important;
+    background: transparent;
+    padding: 0.25rem;
+    height: 2.5rem;
+    border: 1px solid $base_color;
+    border-radius: 1.5rem;
+    input {
+        padding-left: 0.5rem;
+        background: transparent;
+        width: 90%;
+        height: 2.5rem;
+        outline: none;
+        border: none;
+        border-left: 1px solid $base_color;
+    }
+    >label {
+        text-align: center;
+        width: 10%;
+        cursor: pointer;
+    }
+}
+
+.inps {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    >label {
+        font-weight: 400;
+        font-size: small;
+        background: transparent;
+    }
+}
+
+button {
+    width: 100%;
+    height: 2.5rem;
+    background-color: rgb(108, 108, 255);
+    outline: none;
+    border: none;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    &:hover {
+        background-color: rgb(55, 55, 255);
+    }
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+}
